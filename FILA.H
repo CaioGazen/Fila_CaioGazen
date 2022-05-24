@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAX 10
+#define MAX 35
 
 typedef char elemento;
 
@@ -46,7 +46,7 @@ void enqueue(struct sfila *f, elemento v)
    exit(1); /* aborta programa */
   }
 
-  /* insere elemento na próxima posição livre */
+  /* insere elemento na prï¿½xima posiï¿½ï¿½o livre */
   f->vetor[f->fim] = v;
   f->total++;
 
