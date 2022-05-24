@@ -4,17 +4,32 @@
 #include "fila.h"
 
 void cadastrar(struct sfila *campos_guarus,struct sfila *guarus_campos, int s){
+    if (qisFull(campos_guarus) && qisFull(guarus_campos)){
+        printf("\nAmbas as filas para a travessia estao cheias\n\n");
+        system("pause");
+        return;
+    }
     char placa[7];
     printf("\nInforme a placa do veiculo para cadastra-lo na travessia: ");
     scanf("%s",placa);
     switch (s){
         case 1:
+            if (qisFull(campos_guarus)){
+                printf("\nA fila para a travessia sentido Campos->Guarus esta cheia\n\n");
+                system("pause");
+                break;
+            }
             for (int i = 0; i <= 6; i++){
                 enqueue(campos_guarus,placa[i]);
             }
             printf("\nO veiculo %s foi cadastrado no sentido Campos->Guarus\n",placa);
             break;
         case 2:
+            if (qisFull(guarus_campos)){
+                printf("\nA fila para a travessia sentido Guarus->Campos esta cheia\n\n");
+                system("pause");
+                break;
+            }
             for (int i = 0; i <= 6; i++){
                 enqueue(guarus_campos,placa[i]);
             }
