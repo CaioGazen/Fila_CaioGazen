@@ -60,7 +60,7 @@ void liberar(struct sfila *campos_guarus,struct sfila *guarus_campos){
         for (int i = 0; i < 7; i++){
             placa_campos[i] = dequeue(campos_guarus);
         }
-        placa_campos[8] = '\0';
+        placa_campos[7] = '\0';
         for(int i = 0; i < 49; i++){
             system("cls");
             printf("\nCarro %s atravessando sentido Campos->Guarus\n", placa_campos);
@@ -83,7 +83,7 @@ void liberar(struct sfila *campos_guarus,struct sfila *guarus_campos){
         for (int i = 0; i < 7; i++){
             placa_guarus[i] =dequeue(guarus_campos);
         }
-        placa_campos[8] = '\0';
+        placa_guarus[7] = '\0';
         for(int i = 0; i < 49; i++){
             system("cls");
             printf("\nCarro %s atravessando sentido Guarus->Campos\n", placa_guarus);
